@@ -52,6 +52,6 @@
 }
 
 /* Appliquer l'animation uniquement lorsqu'on passe la souris sur l'icône */
-.lien-menu:hover .icon i  {
+.lien-menu:hover .icon i {
     animation: rotateIcon 1.5s linear infinite;
 }

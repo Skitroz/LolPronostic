@@ -25,3 +25,51 @@
     </div>
 </body>
 </html>
+
+<?php
+
+$urlMatchProLEC = file_get_contents('https://www.team-aaa.com/fr/actualite/lec-summer-split-saison-2023-informations-streams-planning-resultats-classement_128106?page=2');
+
+// Créer un nouvel objet DOMDocument
+$dom = new DOMDocument();
+@$dom->loadHTML($urlMatchProLEC);
+
+// Rechercher tous les éléments avec la classe "versus-part"
+$Match = $dom->getElementsByTagName('div');
+
+// Tableau pour stocker les matchs
+$tableauMatch = [];
+
+// Parcourir les éléments "versus-part"
+foreach ($Match as $Matchs) {
+    // Vérifier si l'élément a la classe "versus-part"
+    if ($Matchs->getAttribute('class') === 'versus-part') {
+        // Récupérer le texte brut de l'élément
+        $text = $Matchs->textContent;
+
+        // Remplacer le score "1" par le score entouré de balises <span> avec la classe "text-red-500"
+        $text = preg_replace('/\b1\b/', '<span class="text-[#e0e0f1] bg-[#ff3b3b] py-2 px-3 rounded-[6px]">1</span>', $text);
+        $text = preg_replace('/\b0\b/', '<span class="text-[#e0e0f1] bg-[#b9b9b9] py-2 px-3 rounded-[6px]">0</span>', $text);
+
+        // Ajouter le texte extrait au tableau des matchs
+        $tableauMatch[] = $text;
+    }
+}
+
+// Grouper les matchs en 3 blocs de 5
+$regrouperMatchs = array_chunk($tableauMatch, 5);
+
+// Afficher les blocs de matchs en utilisant le système de grille de Tailwind
+echo '<div class="grid grid-cols-3 gap-4">';
+foreach ($regrouperMatchs as $regroupe) {
+    echo '<div class="col-span-1">';
+    foreach ($regroupe as $matchText) {
+        echo '<div class="p-4 m-2 bg-[#161729] rounded-[12px] flex items-center justify-center">';
+        echo "<p class='text-[20px] text'>{$matchText}</p>";
+        echo '</div>';
+    }
+    echo '</div>';
+}
+echo '</div>';
+
+?>
