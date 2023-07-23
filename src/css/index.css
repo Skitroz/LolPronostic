@@ -40,7 +40,6 @@
     justify-content: center;
 }
 
-/* Définir l'animation */
 @keyframes rotateIcon {
     from {
         transform: rotate(0deg);
@@ -51,7 +50,10 @@
     }
 }
 
-/* Appliquer l'animation uniquement lorsqu'on passe la souris sur l'icône */
 .lien-menu:hover .icon i {
     animation: rotateIcon 1.5s linear infinite;
+}
+
+.background-sessions{
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
 }
