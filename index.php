@@ -1,5 +1,5 @@
 <?php
-    $titlePage = "LolKikoo - Accueil";
+    $titlePage = "Accueil - Lol Prono";
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
                         <a href="#" class="text-menu">Classement</a>
                     </li>
                     <li class="absolute top-2 right-0 mr-10">
-                        <a href="#" class="px-6 py-4 background-login"><i class="fa-regular fa-user"></i></a>
+                        <a href="src/sessions/connexion.php" class="px-6 py-4 background-login"><i class="fa-regular fa-user"></i></a>
                     </li>
                 </ul>
             </nav>
@@ -266,8 +266,82 @@
                 </div>
             </section>
             <div class="flex justify-center gap-[250px] pt-10">
-                <section>
-                    <h2 class="text">Classement des équipes</h2>
+                <section class="pb-6">
+                    <h2 class="text pb-6">Classement des équipes de la LEC</h2>
+                    <div>
+                        <table class="text w-[500px] bg-[#0b0b13] rounded-[10px]">
+                            <thead>
+                                <tr>
+                                    <td class="px-4 py-2">Rang</td>
+                                    <td class="px-4 py-2">Équipes</td>
+                                    <td class="px-4 py-2">Victoires</td>
+                                    <td class="px-4 py-2">Défaites</td>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-[#161729]">
+                                <tr>
+                                    <td class="py-1">1</td>
+                                    <td class="py-1">G2 Esports</td>
+                                    <td class="py-1">8</td>
+                                    <td class="py-1">1</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">2</td>
+                                    <td class="py-1">Fnatic</td>
+                                    <td class="py-1">7</td>
+                                    <td class="py-1">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">3</td>
+                                    <td class="py-1">Excel Esports</td>
+                                    <td class="py-1">5</td>
+                                    <td class="py-1">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">4</td>
+                                    <td class="py-1">Team Heretics</td>
+                                    <td class="py-1">5</td>
+                                    <td class="py-1">4</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">5</td>
+                                    <td class="py-1">Team BDS</td>
+                                    <td class="py-1">4</td>
+                                    <td class="py-1">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">6</td>
+                                    <td class="py-1">SK Gaming</td>
+                                    <td class="py-1">4</td>
+                                    <td class="py-1">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">7</td>
+                                    <td class="py-1">MAD Lions</td>
+                                    <td class="py-1">4</td>
+                                    <td class="py-1">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">8</td>
+                                    <td class="py-1">KOI</td>
+                                    <td class="py-1">4</td>
+                                    <td class="py-1">5</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">9</td>
+                                    <td class="py-1">Astralis</td>
+                                    <td class="py-1">3</td>
+                                    <td class="py-1">6</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-1">10</td>
+                                    <td class="py-1">Vitality</td>
+                                    <td class="py-1">1</td>
+                                    <td class="py-1">8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </section>
                 <section>
                     <h2 class="text">Classement des KikooJAPS</h2>
