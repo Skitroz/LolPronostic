@@ -19,16 +19,28 @@
         <menu>
             <nav class="text py-6">
                 <ul class="pl-10 flex gap-10">
-                    <li>
-                        <a href="#" class="text-menu">Match</a>
+                    <li class="flex gap-2 lien-menu">
+                        <div class="icon">
+                            <i class="fa-solid fa-clock text-[#e0e0f1]"></i>
+                        </div>
+                        <a href="#" class="text-menu">Matchs</a>
                     </li>
-                    <li>
-                        <a href="#" class="text-menu">Pronostic</a>
+                    <li class="flex gap-2 lien-menu">
+                        <div class="icon">
+                            <i class="fa-solid fa-star text-[#e0e0f1]"></i>
+                        </div>
+                        <a href="#" class="text-menu">Pronostics</a>
                     </li>
-                    <li>
+                    <li class="flex gap-2 lien-menu">
+                        <div class="icon">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
                         <a href="#" class="text-menu">Jouer</a>
                     </li>
-                    <li>
+                    <li class="flex gap-2 lien-menu">
+                        <div class="icon">
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
                         <a href="#" class="text-menu">Classement</a>
                     </li>    
                     <li class="absolute top-2 right-0 mr-10">

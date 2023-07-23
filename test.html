@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/0d88df16c5.js" crossorigin="anonymous"></script>
+    <style>
+        /* Définir l'animation */
+        @keyframes rotateIcon {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(180deg); }
+        }
+
+        /* Appliquer l'animation uniquement lorsqu'on passe la souris sur l'icône */
+        .icon:hover i {
+            animation: rotateIcon 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <!-- Icône avec la classe "icon" -->
+        <i class="fa-regular fa-clock text-[#e0e0f1]"></i>
+    </div>
+</body>
+</html>
