@@ -26,8 +26,8 @@
             <input type="password" name="mdp" placeholder="Mot de passe" required class="bg-text w-[350px] m-[20px] p-[20px] border-none outline-none rounded-[5px]">
             <input type="button" value="Connexion" class="w-[200px] h-[40px] m-[10px] text bg-[#0b0b13] text-1 font-bold mt-[20px] outline-none border-none rounded-[5px] cursor-pointer">
         </form>
-        <div class="flex justify-center items-center">
-            <button class="outline-none border-none text-[#0b0b13] py-6 px-[250px] rounded-t-[60%] rounded-b-[10px] bg-[#e0e0f1]">S'inscire</button>
+        <div class="flex justify-center items-center mt-10">
+            <button><a href="inscription.php" class="outline-none border-none text-[#0b0b13] py-6 px-[250px] rounded-t-[60%] rounded-b-[10px] bg-[#e0e0f1]">S'inscire</a></button>
         </div>
         </div>
     </main>
