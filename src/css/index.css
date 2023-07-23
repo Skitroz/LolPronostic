@@ -1,0 +1,41 @@
+.background-login {
+    background-color: #b7b462;
+    border-radius: 6px;
+    transition: transform ease 0.2s, box-shadow ease 0.2s;
+    display: inline-block;
+}
+
+.background-login:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 20px 80px -10px #b7b462;
+}
+
+.background {
+    background-color: #101123;
+}
+
+.text-menu:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.text {
+    color: #e0e0f1;
+}
+
+.primary {
+    color: #b7b462;
+}
+
+.secondary {
+    color: #273418;
+}
+
+.accent {
+    color: #b78962;
+}
+
+.section-matchs{
+    display: flex;
+    justify-content: center;
+}
