@@ -44,42 +44,42 @@
                 <h1 class="text pb-16 text-[34px]">Résumé des matchs récents de la LEC</h1>
                 <?php
 
-$html = file_get_contents('https://www.team-aaa.com/fr/actualite/lec-summer-split-saison-2023-informations-streams-planning-resultats-classement_128106?page=2');
+$urlMatchProLEC = file_get_contents('https://www.team-aaa.com/fr/actualite/lec-summer-split-saison-2023-informations-streams-planning-resultats-classement_128106?page=2');
 
 // Créer un nouvel objet DOMDocument
 $dom = new DOMDocument();
-@$dom->loadHTML($html);
+@$dom->loadHTML($urlMatchProLEC);
 
 // Rechercher tous les éléments avec la classe "versus-part"
-$versusElements = $dom->getElementsByTagName('div');
+$Match = $dom->getElementsByTagName('div');
 
 // Tableau pour stocker les matchs
-$matches = [];
+$tableauMatch = [];
 
 // Parcourir les éléments "versus-part"
-foreach ($versusElements as $versusElement) {
+foreach ($Match as $Matchs) {
     // Vérifier si l'élément a la classe "versus-part"
-    if ($versusElement->getAttribute('class') === 'versus-part') {
+    if ($Matchs->getAttribute('class') === 'versus-part') {
         // Récupérer le texte brut de l'élément
-        $text = $versusElement->textContent;
+        $text = $Matchs->textContent;
 
         // Remplacer le score "1" par le score entouré de balises <span> avec la classe "text-red-500"
         $text = preg_replace('/\b1\b/', '<span class="text-[#e0e0f1] bg-[#ff3b3b] py-2 px-3 rounded-[6px]">1</span>', $text);
         $text = preg_replace('/\b0\b/', '<span class="text-[#e0e0f1] bg-[#b9b9b9] py-2 px-3 rounded-[6px]">0</span>', $text);
 
         // Ajouter le texte extrait au tableau des matchs
-        $matches[] = $text;
+        $tableauMatch[] = $text;
     }
 }
 
 // Grouper les matchs en 3 blocs de 5
-$groupedMatches = array_chunk($matches, 5);
+$regrouperMatchs = array_chunk($tableauMatch, 5);
 
 // Afficher les blocs de matchs en utilisant le système de grille de Tailwind
 echo '<div class="grid grid-cols-3 gap-4">';
-foreach ($groupedMatches as $group) {
+foreach ($regrouperMatchs as $regroupe) {
     echo '<div class="col-span-1">';
-    foreach ($group as $matchText) {
+    foreach ($regroupe as $matchText) {
         echo '<div class="p-4 m-2 bg-[#161729] rounded-[12px]">';
         echo "<p class='text-[20px] text'>{$matchText}</p>";
         echo '</div>';
