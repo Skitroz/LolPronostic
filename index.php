@@ -54,6 +54,13 @@
             </nav>
         </menu>
     </header>
+    <section>
+        <?php 
+
+        include("src/sessions/points.php");
+        
+        ?>
+    </section>
     <main>
         <div class="flex-col text-center pt-10">
             <section>
