@@ -17,13 +17,13 @@
     <title><?php echo $titrePage;?></title>
 </head>
 <body class="background-sessions h-screen">
-    <main class="flex flex-col w-screen h-screen items-center justify-center">
+    <main class="flex w-screen h-screen items-center justify-center">
         <div class="shadow-[5px_20px_50px_#000] rounded-[10px]">
         <form action="sessions.php" method="POST" class="flex flex-col justify-center items-center">
             <h1 class="text text-[36px] m-[40px] font-bold">Connexion</h1>
             <input type="text" name="pseudo" placeholder="Pseudo" required class="bg-text w-[350px] m-[20px] p-[20px] border-none outline-none rounded-[5px]">
             <input type="password" name="mdp" placeholder="Mot de passe" required class="bg-text w-[350px] m-[20px] p-[20px] border-none outline-none rounded-[5px]">
-            <input type="submit" value="Connexion" class="w-[200px] h-[40px] m-[10px] text bg-[#0b0b13] text-1 font-bold mt-[20px] outline-none border-none rounded-[5px] cursor-pointer">
+            <input type="submit" name="connexion" value="Connexion" class="w-[200px] h-[40px] m-[10px] text bg-[#0b0b13] text-1 font-bold mt-[20px] outline-none border-none rounded-[5px] cursor-pointer">
         </form>
         <div class="flex justify-center items-center mt-10">
             <button><a href="inscription.php" class="outline-none border-none text-[#0b0b13] py-6 px-[250px] rounded-t-[60%] rounded-b-[10px] bg-[#e0e0f1]">S'inscrire</a></button>

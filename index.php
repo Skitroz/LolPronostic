@@ -48,7 +48,7 @@
                         <a href="#" class="text-menu">Classement</a>
                     </li>
                     <li class="absolute top-2 right-0 mr-10">
-                        <a href="src/sessions/connexion.php" class="px-6 py-4 background-login"><i class="fa-regular fa-user"></i></a>
+                        <?php include("src/sessions/check-sessions.php"); ?>
                     </li>
                 </ul>
             </nav>

@@ -18,9 +18,29 @@ if(isset($_POST['envoyer'])){
 
     $stmt->execute();
 
-    header("Location: ../dashboard.php");
+    header("Location: ../../index.php");
     exit;
 
 }
 
+if(isset($_POST['connexion'])){
+    $pseudo = $_POST['pseudo'];
+    $mdp = $_POST['mdp'];
+
+    $sql = "SELECT pseudo, mdp FROM users WHERE pseudo = :pseudo";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':pseudo', $pseudo);
+    $stmt->execute();
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($mdp, $user['mdp'])){
+        session_start();
+        $_SESSION['pseudo'] = $pseudo;
+        header("Location: ../../index.php");
+        exit;
+    } else {
+        echo "Pseudo ou mot de passe incorrect";
+    }
+}
 ?>
