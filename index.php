@@ -345,6 +345,16 @@
                 </section>
                 <section>
                     <h2 class="text">Classement des KikooJAPS</h2>
+                    <?php 
+                    
+                    include("src/connexion-bdd.php");
+                    
+                    $utilisateur = $dbh->query('SELECT pseudo FROM users');
+                    while ($reponseUtilisateur = $utilisateur->fetch()) {
+                        echo $reponseUtilisateur['pseudo'] . '<br>';
+                    }
+
+                    ?>
                 </section>
             </div>
         </div>
