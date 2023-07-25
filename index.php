@@ -27,7 +27,7 @@
                         <div class="icon">
                             <i class="fa-solid fa-clock text"></i>
                         </div>
-                        <a href="#" class="text-menu">Matchs</a>
+                        <a href="src/matchs.php" class="text-menu">Matchs</a>
                     </li>
                     <li class="flex gap-2 lien-menu">
                         <div class="icon">
@@ -351,17 +351,32 @@
                     </div>
                 </section>
                 <section>
-                    <h2 class="text">Classement des KikooJAPS</h2>
-                    <?php 
-                    
-                    include("src/connexion-bdd.php");
-                    
-                    $utilisateur = $dbh->query('SELECT pseudo FROM users');
-                    while ($reponseUtilisateur = $utilisateur->fetch()) {
-                        echo $reponseUtilisateur['pseudo'] . '<br>';
-                    }
-
-                    ?>
+                    <h2 class="text pb-6">Classement des joueurs KikooJAPS</h2>
+                        <table class="text w-[500px] bg-[#0b0b13] rounded-[10px]">
+                        <thead>
+                            <tr>
+                            <th class="px-4 py-2">Pseudo</th>
+                            <th class="px-4 py-2">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-[#161729]">
+                            <?php 
+                            include("src/connexion-bdd.php");
+                            
+                            // Requête SQL pour récupérer les pseudos et les points des utilisateurs
+                            $sql = "SELECT pseudo, points FROM users ORDER BY points DESC";
+                            $stmt = $dbh->query($sql);
+                            
+                            // Boucle pour afficher les résultats sous forme de tableau
+                            while ($row = $stmt->fetch()) {
+                            echo '<tr>';
+                            echo '<td class="py-1">' . $row['pseudo'] . '</td>';
+                            echo '<td class="py-1">' . $row['points'] . '</td>';
+                            echo '</tr>';
+                            }
+                            ?>
+                        </tbody>
+                        </table>
                 </section>
             </div>
         </div>

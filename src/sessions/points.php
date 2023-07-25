@@ -21,14 +21,5 @@ if (isset($_SESSION['pseudo'])) {
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        $points = $user['points'];
-        echo "<p style='color: white;'>Bienvenue, $pseudo ! Vous avez $points points.</p>";
-    } else {
-        echo "Erreur : impossible de trouver l'utilisateur.";
-    }
-} else {
-    echo "Bienvenue, visiteur !";
 }
 ?>
